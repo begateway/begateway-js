@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iframe payment page intergration</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="lib/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="lib/paymentr.js"></script>
+</head>
+<body>
+<style type="text/css">
+  #paymentForm {
+    /*display: none;*/
+  }
+  body {
+    width: 70%;
+    margin: 10px auto;
+  }
+</style>
+<h1>le test shop</h1>
+<p>
+  Lorem ipsum dolor sit amet, ei per ignota adversarium, et melius ceteros mei, eam mundi sadipscing cu. No sit legere fuisset forensibus, te eos odio debitis. Pri altera laboramus cu, cum falli mentitum lucilius et, ius possim utroque sententiae an. Causae epicurei antiopam ne nec, te nam eius percipit, cu vis esse minim. Qui albucius menandri evertitur id, et eos diam mollis discere. Sea graeci nonumes cu, cu eos dicunt discere honestatis, eros modus usu et.
+</p>
+<a href="#" id="paymentLink">pay me</a>
+<div id='myDiv'></div>
+<p>
+  Aliquam facilis adipiscing eum ne. Sea et vivendo scaevola ocurreret. Ut quo omnis nobis iriure, everti tritani delicata ut per, usu ea esse sale definitionem. Ex laudem vocent recusabo sit. In agam causae animal quo, id eos cetero insolens cotidieque.
+</p>
+
+<script type="text/javascript">  
+  var options = {
+    type: 'overlay', // inline or overlay
+    id: 'paymentLink',
+    url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
+    style: ".content { border:1px solid black; background-color: blue; } #myDiv {display:none;}"
+  }
+
+  // var options = {
+  //   type: 'inline', // inline or overlay
+  //   id: 'myDiv',
+  //   url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
+  //   style: "body { border:1px solid black; background-color: blue; } #myDiv {display:none;}"
+  // }
+
+  var pf = new PaymentForm(options);
+  pf.buildForm();
+</script>
+  
+</body>
+</html>
