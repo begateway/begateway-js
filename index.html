@@ -31,15 +31,16 @@
     type: 'overlay', // inline or overlay
     id: 'paymentLink',
     url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
-    style: ".content { border:1px solid black; background-color: blue; } #myDiv {display:none;}"
+    style: ""
   }
 
-  // var options = {
-  //   type: 'inline', // inline or overlay
-  //   id: 'myDiv',
-  //   url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
-  //   style: "body { border:1px solid black; background-color: blue; } #myDiv {display:none;}"
-  // }
+  var options = {
+    type: 'inline',
+    id: 'myDiv',
+    url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
+    style: ".shop-name { display:none; } #myDiv {display:none;}",
+    size: {width: 350, height: 260}
+  }
 
   var pf = new PaymentForm(options);
   pf.buildForm();
