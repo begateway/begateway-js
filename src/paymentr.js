@@ -111,6 +111,7 @@
             document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=true"));
             if ($('#closeWindow').size() == 0) {
               $('.ui-dialog').prepend("<a href='#' id='closeWindow'></div>");
+              $("a#closeWindow").css("left", size.width);
             };
           };
         }
