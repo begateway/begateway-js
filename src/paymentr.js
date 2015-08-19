@@ -63,12 +63,19 @@
     };
 
     var styles = this.styles;
+    var size = this.size;
 
     iframe.onload = function() {
       iframe.contentWindow.postMessage({ css: styles }, "*");
-      $('a#closeWindow').click(function() {
-        $('#dialogWindow').dialog('close');
-      });
+      if ($('#closeWindow').size() == 0) {
+        $('.ui-dialog').prepend("<a href='#' id='closeWindow'></div>");
+        $("a#closeWindow").css("left", size.width);
+
+        $('a#closeWindow').click(function() {
+          $('#dialogWindow').dialog('close');
+        });
+
+      };
     };
     return iframe;
   }
@@ -109,10 +116,6 @@
         open: function () {
           if ($('#' + dialogId).children('iframe').size() == 0) {
             document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=true"));
-            if ($('#closeWindow').size() == 0) {
-              $('.ui-dialog').prepend("<a href='#' id='closeWindow'></div>");
-              $("a#closeWindow").css("left", size.width);
-            };
           };
         }
       });
