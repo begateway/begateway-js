@@ -115,7 +115,7 @@
         },
         open: function () {
           if ($('#' + dialogId).children('iframe').size() == 0) {
-            document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=true"));
+            document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=overlay"));
           };
         }
       });
@@ -124,7 +124,7 @@
 
   PaymentForm.prototype.buildInlineForm = function(url) {
     if (!this.isMobile()) {
-      url = url + "&iframe=true";
+      url = url + "&iframe=inline";
     };
 
     this.prepareIframe(url);
