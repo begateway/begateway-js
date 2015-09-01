@@ -28,17 +28,17 @@
   var options = {
     type: 'overlay', // inline or overlay
     id: 'paymentLink',
-    url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
+    url: "http://127.0.0.1:3002/checkout?token=5415a8bf05eab2c1dbcad7ee1452dcbf6a1ed64fdaebe414555f8ad23df132e0",
     style: "",
-    size: { width: 400, height: 550 }
+    size: { width: 320, height: 480 }
   }
 
   var options = {
     type: 'inline',
     id: 'myDiv',
     url: "http://127.0.0.1:3002/checkout?token=c190759ce6ce4ff57bd8aa7de5ef18255d279ccb67ff0a28ad173e2877191a84",
-    style: ".shop-name { display:none; } body#iframe #request .submit-button { background-color: white; }",
-    size: { width: 350, height: 450 }
+    style: "",
+    size: { width: 350, height: 350 }
   }
 
   var pf = new PaymentForm(options);
