@@ -123,7 +123,7 @@ Now let's see it in action. Here is a HTML example where iframe is overlay:
 </html>
 ```
 
-### Inlide iframe
+### Inline iframe
 
 Here is an example of inline iframe:
 
