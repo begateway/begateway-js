@@ -24,7 +24,7 @@
     if (options.size) {
       this.size = options.size;
     } else {
-      this.size = { height: 320, width: 350 };  
+      this.size = { height: 320, width: 480 };  
     };
   };
 
