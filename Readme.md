@@ -8,7 +8,7 @@ website.
 
 ## Step 1 - acquire a payment token
 
-Refer to [beGateway API](https://doc.begateway.com/checkout/transaction-token) or API of your payment service processor how to acquire a payment token.
+Refer to [beGateway API](https://doc.begateway.com/checkout/payment-token) or API of your payment service processor how to acquire a payment token.
 
 Simply it can be done with cURL but you are free to use beGateway [PHP](https://github.com/beGateway/begateway-api-php) or [Ruby](https://github.com/beGateway/client_ruby) libraries.
 
