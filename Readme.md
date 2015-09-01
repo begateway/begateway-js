@@ -69,6 +69,9 @@ page and populate the variables as follows:
   * `width`, `height` - optional iframe geometry. By default 320px x
     480px
 
+__Note:__ Upload
+[paymentr.min.js](https://raw.githubusercontent.com/beGateway/begateway-js/master/paymentr.min.js) to your webserver.
+
 ```javascript
 <script type="text/javascript" src="paymentr.min.js"></script>
 <script type="text/javascript">

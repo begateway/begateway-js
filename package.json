@@ -1,7 +1,7 @@
 {
   "name": "paymentr",
   "version": "1.0.0",
-  "description": "Paymentr.js is a library for iframe integration with eComCharge / BePaid payment service.",
+  "description": "Paymentr.js is a library for iframe integration with beGateway payment service.",
   "main": "paymentr.js",
   "scripts": {},
   "author": "Evgeny Sugakov",
