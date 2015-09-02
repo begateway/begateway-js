@@ -60,13 +60,14 @@ Now you will add the following JavaScript/HTML lines of code to your
 page and populate the variables as follows:
 
   * `type` - iframe type: `inline` or `overlay`
-  * `element id` - id of an element where to stick to show an inline
+  * `id` - element id where to stick to show an inline
     iframe or bring up an overlay one when the element is clicked
-  * `redirect url` - a value of the `redirect_url` variable in a JSON
+  * `url` - a value of the `redirect_url` variable in a JSON
     response from the step 1
-  * `css` - CSS to pass to iframe. You can re-defind built-in CSS
-    classes and design the payment form in own style
-  * `width`, `height` - optional iframe geometry. By default 320px x
+  * `style` - optional CSS to pass to iframe. You can re-define any CSS
+    class of iframe and design the payment form in own style. Example:
+`style: ".shop-name { display:none; } body#iframe #request .submit-button { background-color: white; }"`
+  * `size` - optional iframe window size `{width} X {height}`. By default 320px X
     480px
 
 __Note:__ Upload
