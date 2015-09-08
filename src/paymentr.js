@@ -3,7 +3,7 @@
     
   function receiveMessage(event) {
     if (event.data.url) {
-      document.location = event.data.url;
+      setTimeout(function(){ document.location = url; }, 500);
     };
     return false;
   }
