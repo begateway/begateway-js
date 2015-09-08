@@ -3,7 +3,7 @@
     
   function receiveMessage(event) {
     if (event.data.url) {
-      window.location.href = event.data.url;
+      document.location = event.data.url;
     };
     return false;
   }
