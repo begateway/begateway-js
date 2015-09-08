@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inline iFrame payment form</title>
+  <script type="text/javascript" src="paymentr.min.js"></script>
+</head>
+<body style="width: 70%; margin: 10px auto;">
+  <h1>Test shop</h1>
+  <p>
+    T-Shirt 5 EUR
+  </p>
+  <div id="paymentForm"></div>
+
+<script type="text/javascript">
+
+  var options = {
+    type: 'inline',
+    id: 'paymentForm',
+    url: "https://checkout.begateway.com/checkout?token=2dace3c57d96d64a0026364c7bd26c627e7a96d8fef8e129d45b2ebd2864db1c",
+    style: "",
+    size: { width: 350, height: 350 }
+  }
+  var pf = new PaymentForm(options);
+  pf.buildForm();
+</script>
+
+</body>
+</html>
