@@ -123,9 +123,7 @@
   };
 
   PaymentForm.prototype.buildInlineForm = function(url) {
-    if (!this.isMobile()) {
-      url = url + "&iframe=inline";
-    };
+    url = url + "&iframe=inline";
 
     this.prepareIframe(url);
     $('#' + this.iframeDivId).show();
