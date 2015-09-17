@@ -1,6 +1,6 @@
 {
   "name": "paymentr",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Paymentr.js is a library for iframe integration with eComCharge payment software.",
   "main": "paymentr.js",
   "scripts": {},
