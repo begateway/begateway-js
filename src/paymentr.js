@@ -10,7 +10,7 @@
 
   window.addEventListener("message", receiveMessage, false);
   
-  var PaymentForm = function (options) {
+  var BeGateway = function (options) {
     if (!options.url) {
       return false;
     };
@@ -19,7 +19,7 @@
     this.styles = options.style;
     this.type = options.type;
     this.anchor = options.id;
-    this.iframeDivId = 'paymentForm';
+    this.iframeDivId = 'beGatewayForm';
 
     if (options.size) {
       this.size = options.size;
@@ -28,7 +28,7 @@
     };
   };
 
-  PaymentForm.prototype.isMobile = function () {
+  BeGateway.prototype.isMobile = function () {
     if ( navigator.userAgent.match(/Android/i) ||
       navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/Windows Phone/i) ) {
@@ -38,7 +38,7 @@
     }
   }
 
-  PaymentForm.prototype.prepareIframe = function (url) {
+  BeGateway.prototype.prepareIframe = function (url) {
     var iframeDiv = document.createElement("div");
     iframeDiv.setAttribute("id", this.iframeDivId);
     iframeDiv.style.display = "none";
@@ -80,7 +80,7 @@
     return iframe;
   }
 
-  PaymentForm.prototype.buildOverlayForm = function (url) {
+  BeGateway.prototype.buildOverlayForm = function (url) {
     var linkId = '#' + this.anchor;
     var size = this.size;
     var that = this;
@@ -122,14 +122,14 @@
     });
   };
 
-  PaymentForm.prototype.buildInlineForm = function(url) {
+  BeGateway.prototype.buildInlineForm = function(url) {
     url = url + "&iframe=inline";
 
     this.prepareIframe(url);
     $('#' + this.iframeDivId).show();
   }
 
-  PaymentForm.prototype.buildForm = function () {
+  BeGateway.prototype.buildForm = function () {
     if (options.style) {
       this.styles = options.style;
     };
@@ -145,5 +145,5 @@
     };
   };
 
-  window.PaymentForm = PaymentForm;
+  window.BeGateway = BeGateway;
 }());
