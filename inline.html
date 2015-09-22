@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Inline iFrame payment form</title>
-  <script type="text/javascript" src="paymentr.min.js"></script>
+  <script type="text/javascript" src="begateway.min.js"></script>
 </head>
 <body style="width: 70%; margin: 10px auto;">
   <h1>Test shop</h1>
@@ -21,6 +21,8 @@
     size: { width: 350, height: 350 }
   }
   var pf = new PaymentForm(options);
+  
+  var pf = new BeGateway(options);
   pf.buildForm();
 </script>
 

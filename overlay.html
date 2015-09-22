@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Overlay iFrame payment form</title>
-  <script type="text/javascript" src="paymentr.min.js"></script>
+  <script type="text/javascript" src="begateway.min.js"></script>
 </head>
 <body style="width: 70%; margin: 10px auto;">
   <h1>Test shop</h1>
@@ -20,7 +20,7 @@
     size: { width: 320, height: 480 }
   }
 
-  var pf = new PaymentForm(options);
+  var pf = new BeGateway(options);
   pf.buildForm();
 </script>
 
