@@ -84,7 +84,7 @@ __Note:__ Upload
     size: { width: {width}, height: {height} }
   }
 
-  var pf = new PaymentForm(options);
+  var pf = new BeGateway(options);
   pf.buildForm();
 </script>
 ```
@@ -116,7 +116,7 @@ Now let's see it in action. Here is a HTML example where iframe is overlay:
     size: { width: 320, height: 480 }
   }
 
-  var pf = new PaymentForm(options);
+  var pf = new BeGateway(options);
   pf.buildForm();
 </script>
 
