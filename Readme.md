@@ -151,7 +151,7 @@ Here is an example of inline iframe:
     style: "",
     size: { width: 350, height: 350 }
   }
-  var pf = new PaymentForm(options);
+  var pf = new BeGateway(options);
   pf.buildForm();
 </script>
 
