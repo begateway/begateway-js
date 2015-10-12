@@ -72,7 +72,7 @@
         $("a#closeWindow").css("left", size.width);
 
         $('a#closeWindow').click(function() {
-          $('#dialogWindow').dialog('close');
+          $('#dialogWindowBeGateway').dialog('close');
         });
 
       };
@@ -84,12 +84,12 @@
     var linkId = '#' + this.anchor;
     var size = this.size;
     var that = this;
-    var dialogId = "dialogWindow";
+    var dialogId = "dialogWindowBeGateway";
 
     var emptyDiv = document.createElement('div');
     emptyDiv.setAttribute("id", dialogId);
     document.body.appendChild(emptyDiv);
-    
+
     var reg = new RegExp('([http|https].+\/)checkout')
     var path =  reg.exec(this.url)[1];
     var cssPath = path + 'stylesheets/jquery-ui.min.css'
@@ -103,10 +103,14 @@
         return false;
       }
 
+      var new_width = size.width + 10;
+      var new_height = size.height + 10;
+
       $('#' + dialogId).dialog({
+        dialogClass: dialogId,
         modal: true,
-        width: size.width + 10,
-        height: size.height + 30,
+        width: new_width,
+        height: new_height,
         show: {
           effect: "fadeIn"
         },
@@ -117,6 +121,10 @@
           if ($('#' + dialogId).children('iframe').size() == 0) {
             document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=overlay"));
           };
+          $('#' + dialogId).css("cssText",
+            "width: " + new_width + "px !important;;" + 
+            "max-height:" + new_height + "px !important;" +
+            "height: " + new_height + "px !important;" );
         }
       });
     });
