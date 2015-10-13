@@ -125,7 +125,8 @@
             "width: " + new_width + "px !important;" + 
             "max-width: " + new_width + "px !important;" + 
             "max-height:" + new_height + "px !important;" +
-            "height: " + new_height + "px !important;" );
+            "height: " + new_height + "px !important;" + 
+            "overflow-x: hidden; overflow-y: hidden;");
         }
       });
     });
