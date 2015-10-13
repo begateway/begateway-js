@@ -122,7 +122,8 @@
             document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=overlay"));
           };
           $('#' + dialogId).css("cssText",
-            "width: " + new_width + "px !important;;" + 
+            "width: " + new_width + "px !important;" + 
+            "max-width: " + new_width + "px !important;" + 
             "max-height:" + new_height + "px !important;" +
             "height: " + new_height + "px !important;" );
         }
