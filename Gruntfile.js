@@ -13,10 +13,10 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: ['src/jquery-2.1.4.min.js', 'src/jquery-ui.min.js', 'src/begateway.min.js'],
-        dest: 'begateway.min.js',
+        dest: 'begateway-<%= pkg.version %>.min.js',
       },
     },
-    clean: ['src/begateway.min.js']
+    clean: ['src/begateway-<%= pkg.version %>.min.js']
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
