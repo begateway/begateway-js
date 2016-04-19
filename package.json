@@ -1,6 +1,6 @@
 {
   "name": "begateway",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "begateway.js is a library for iframe integration with eComCharge payment software.",
   "main": "begateway.js",
   "scripts": {},
