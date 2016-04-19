@@ -6,6 +6,7 @@
       setTimeout(function(){
         try {
           window.top.location.href = event.data.url;
+          parent.document.location.href = event.data.url; // firefox
         }
         catch(err) {
           document.location = event.data.url;
