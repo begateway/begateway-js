@@ -1,20 +1,27 @@
 (function () {
   "use strict";
-    
+
   function receiveMessage(event) {
     if (event.data.url) {
-      setTimeout(function(){ document.location = event.data.url; }, 500);
+      setTimeout(function(){
+        try {
+          window.top.location.href = event.data.url;
+        }
+        catch(err) {
+          document.location = event.data.url;
+        }
+      }, 500);
     };
     return false;
   }
 
   window.addEventListener("message", receiveMessage, false);
-  
+
   var BeGateway = function (options) {
     if (!options.url) {
       return false;
     };
-    
+
     this.url = options.url;
     this.styles = options.style;
     this.type = options.type;
@@ -24,7 +31,7 @@
     if (options.size) {
       this.size = options.size;
     } else {
-      this.size = { height: 480, width: 320 };  
+      this.size = { height: 480, width: 320 };
     };
   };
 
@@ -122,10 +129,10 @@
             document.getElementById(dialogId).appendChild(that.prepareIframe(url + "&iframe=overlay"));
           };
           $('#' + dialogId).css("cssText",
-            "width: " + new_width + "px !important;" + 
-            "max-width: " + new_width + "px !important;" + 
+            "width: " + new_width + "px !important;" +
+            "max-width: " + new_width + "px !important;" +
             "max-height:" + new_height + "px !important;" +
-            "height: " + new_height + "px !important;" + 
+            "height: " + new_height + "px !important;" +
             "overflow-x: hidden; overflow-y: hidden;");
         }
       });
