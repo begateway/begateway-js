@@ -81,7 +81,8 @@
         $('.ui-dialog').prepend("<a href='#' id='closeWindow'></div>");
         $("a#closeWindow").css("left", size.width);
 
-        $('a#closeWindow').click(function() {
+        $('a#closeWindow').click(function(e) {
+          e.preventDefault();
           $('#dialogWindowBeGateway').dialog('close');
         });
 
