@@ -2,12 +2,10 @@
   "use strict";
 
   function receiveMessage(event) {
-    console.log("DEBUG: message from iFrame received!");
-
     if (event.data.url) {
       setTimeout(function(){
         try {
-          window.top.location.href = event.data.url;
+          window.top.location = event.data.url;
         }
         catch(err) {
           document.location = event.data.url;
@@ -17,7 +15,6 @@
     return false;
   }
 
-  window.removeEventListener("message", receiveMessage, false);
   window.addEventListener("message", receiveMessage, false);
 
   var BeGateway = function (options) {
