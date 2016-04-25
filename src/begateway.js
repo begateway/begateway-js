@@ -3,7 +3,14 @@
 
   function receiveMessage(event) {
     if (event.data.url) {
-      setTimeout(function(){ document.location = event.data.url; }, 500);
+      setTimeout(function(){
+        try {
+          window.top.location = event.data.url;
+        }
+        catch(err) {
+          document.location = event.data.url;
+        }
+      }, 500);
     };
     return false;
   }
