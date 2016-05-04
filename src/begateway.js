@@ -45,10 +45,21 @@
     }
   }
 
+  BeGateway.prototype.showSpinner = function(){
+    $('#' + this.anchor).append(
+      "<div class='spinner'><img src='https://js.begateway.com/images/ajax-loader.gif' class='beSpinner'></img></div>");
+    $('.spinner').css('position', 'absolute').css('left', '45%').css('top', '28%');
+  };
+  BeGateway.prototype.hideSpinner = function(){
+    $('img.beSpinner').remove();
+  };
+
   BeGateway.prototype.prepareIframe = function (url) {
     var iframeDiv = document.createElement("div");
-    iframeDiv.setAttribute("id", this.iframeDivId);
-    iframeDiv.style.display = "none";
+    $(iframeDiv).attr("id", this.iframeDivId);
+    
+    this.showSpinner();
+    $(iframeDiv).hide();
 
     var iframe = document.createElement("IFRAME");
     iframe.setAttribute("src", url);
@@ -71,9 +82,11 @@
 
     var styles = this.styles;
     var size = this.size;
+    var that = this;
 
     iframe.onload = function() {
       iframe.contentWindow.postMessage({ css: styles }, "*");
+
       if ($('#closeWindow').size() == 0) {
         $('.ui-dialog').prepend("<a href='#' id='closeWindow'></div>");
         $("a#closeWindow").css("left", size.width);
@@ -82,9 +95,12 @@
           e.preventDefault();
           $('#dialogWindowBeGateway').dialog('close');
         });
-
       };
+
+      that.hideSpinner();
+      $(iframeDiv).show();
     };
+
     return iframe;
   }
 
@@ -142,9 +158,7 @@
 
   BeGateway.prototype.buildInlineForm = function(url) {
     url = url + "&iframe=inline";
-
     this.prepareIframe(url);
-    $('#' + this.iframeDivId).show();
   }
 
   BeGateway.prototype.buildForm = function () {
