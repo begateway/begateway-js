@@ -56,7 +56,12 @@
   }
 
   BeGateway.prototype.showSpinner = function(){
-    $('#' + this.anchor).append(cssDivWithSpinner());
+    appendStyle();
+    if (this.type == 'overlay') {
+      $('body').append(cssDivWithSpinner());
+    } else {
+      $('#' + this.anchor).append(cssDivWithSpinner());
+    }
     $('.beGatewaySpinner').css('position', 'absolute').css('left', '45%').css('top', '28%');
   };
   BeGateway.prototype.hideSpinner = function(){
@@ -64,8 +69,6 @@
   };
 
   BeGateway.prototype.prepareIframe = function (url) {
-    appendStyle();
-
     var iframeDiv = document.createElement("div");
     $(iframeDiv).attr("id", this.iframeDivId);
 
