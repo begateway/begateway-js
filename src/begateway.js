@@ -62,7 +62,7 @@
     } else {
       $('#' + this.anchor).append(cssDivWithSpinner());
     }
-    $('.beGatewaySpinner').css('position', 'absolute').css('left', '45%').css('top', '28%').css('z-index', '102');
+    $('.beGatewaySpinner').css('position', 'absolute').css('left', '45%').css('top', '28%').css('z-index', '31337');
   };
   BeGateway.prototype.hideSpinner = function(){
     $('.beGatewaySpinner').remove();
