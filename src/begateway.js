@@ -57,13 +57,25 @@
 
   BeGateway.prototype.showSpinner = function(){
     appendStyle();
+
     if (this.type == 'overlay') {
       $('body').append(cssDivWithSpinner());
     } else {
       $('#' + this.anchor).append(cssDivWithSpinner());
     }
-    $('.beGatewaySpinner').css('position', 'absolute').css('left', '45%').css('top', '28%').css('z-index', '31337');
+    var cssStyle = {
+      'position': 'absolute',
+      'left': '50%',
+      'top': '50%',
+      'z-index': '31337',
+      'margin-left': '-29px',
+      'margin-top': '-29px'
+    }
+    $.each(cssStyle, function(index, value) {
+      $('.beGatewaySpinner').css(index, value);
+    });
   };
+
   BeGateway.prototype.hideSpinner = function(){
     $('.beGatewaySpinner').remove();
   };
@@ -172,6 +184,7 @@
 
   BeGateway.prototype.buildInlineForm = function(url) {
     url = url + "&iframe=inline";
+    $('#' + this.anchor).css('position', 'relative');
     this.prepareIframe(url);
   }
 
