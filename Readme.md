@@ -71,7 +71,7 @@ page and populate the variables as follows:
     480px
 
 ```javascript
-<script type="text/javascript" src="https://js.begateway.com/begateway-1.1.0.min.js"></script>
+<script type="text/javascript" src="https://js.begateway.com/begateway-1-latest.min.js"></script>
 <script type="text/javascript">
   var options = {
     type: '{type}',
@@ -95,7 +95,7 @@ Now let's see it in action. Here is a HTML example where iframe is overlay:
 <html>
 <head>
   <title>Overlay iFrame payment form</title>
-  <script type="text/javascript" src="https://js.begateway.com/begateway-1.1.0.min.js"></script>
+  <script type="text/javascript" src="https://js.begateway.com/begateway-1-latest.min.js"></script>
 </head>
 <body style="width: 70%; margin: 10px auto;">
   <h1>Test shop</h1>
@@ -130,7 +130,7 @@ Here is an example of inline iframe:
 <html>
 <head>
   <title>Inline iFrame payment form</title>
-  <script type="text/javascript" src="https://js.begateway.com/begateway-1.1.0.min.js"></script>
+  <script type="text/javascript" src="https://js.begateway.com/begateway-1-latest.min.js"></script>
 </head>
 <body style="width: 70%; margin: 10px auto;">
   <h1>Test shop</h1>
