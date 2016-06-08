@@ -195,10 +195,6 @@
   }
 
   BeGateway.prototype.buildForm = function () {
-    if (options.style) {
-      this.styles = options.style;
-    };
-
     if (this.type == 'overlay') {
       this.buildOverlayForm(this.url);
       return false;
