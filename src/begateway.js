@@ -152,7 +152,7 @@
     var cssPath = path + 'stylesheets/jquery-ui.min.css'
     $('body').append('<link rel="stylesheet" href="' + cssPath + '">');
 
-    $(linkId).click(function(event) {
+    $(linkId).on('click.overlayForm', function(event) {
       event.preventDefault();
 
       if (that.isMobile()) {
