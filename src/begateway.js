@@ -120,7 +120,7 @@
     iframe.onload = function() {
       iframe.contentWindow.postMessage({ css: styles }, "*");
 
-      if ($('#closeWindow').size() == 0) {
+      if ($('#closeWindow').length == 0) {
         $('.ui-dialog').prepend("<a href='#' id='closeWindow'></div>");
         $("a#closeWindow").css("left", size.width);
 
