@@ -156,7 +156,7 @@
       event.preventDefault();
 
       if (that.isMobile()) {
-        window.open(that.url);
+        window.open(url + "&iframe=phone");
         return false;
       }
 
