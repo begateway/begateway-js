@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     },
     concat: {
       dist: {
-        src: ['src/sentry-5.17.0.min.js', 'src/jquery-2.1.4.min.js', 'src/jquery-ui.min.js', 'src/begateway.min.js'],
+        src: ['src/jquery-2.1.4.min.js', 'src/jquery-ui.min.js', 'src/begateway.min.js'],
         dest: 'begateway-<%= pkg.version %>.min.js',
       },
     },
