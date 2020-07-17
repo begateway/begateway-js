@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Inline iFrame payment form</title>
-  <script src="https://browser.sentry-cdn.com/5.17.0/bundle.min.js" integrity="sha384-lowBFC6YTkvMIWPORr7+TERnCkZdo5ab00oH5NkFLeQUAmBTLGwJpFjF6djuxJ/5" crossorigin="anonymous">
-  </script>
   <script type="text/javascript" src="./begateway-1.2.8.min.js"></script>
 </head>
 <body style="width: 70%; margin: 10px auto;">
@@ -18,7 +16,7 @@
   var options = {
     type: 'inline',
     id: 'paymentForm',
-    url: "https://checkout.begateway.com/v2/checkout?token=2dace3c57d96d64a0026364c7bd26c627e7a96d8fef8e129d45b2ebd2864db1c",
+    url: "https://checkout.begateway.com/checkout?token=2dace3c57d96d64a0026364c7bd26c627e7a96d8fef8e129d45b2ebd2864db1c",
     style: "",
     size: { width: 350, height: 350 }
   }
