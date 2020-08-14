@@ -1,5 +1,7 @@
 (function () {
   "use strict";
+
+  Sentry.init({ dsn: 'https://ce8fc9d5a4854150b75072cac825e36a@sentry.ecomcharge.com/14' });
   var $bgw = jQuery.noConflict();
 
   function cssStyleForSpinner() {
@@ -38,6 +40,12 @@
     this.type = options.type;
     this.anchor = options.id;
     this.iframeDivId = 'beGatewayForm';
+
+    const searchParams = new URLSearchParams(options.url.split('?')[1]);
+    if (this.styles && searchParams.get('token')) {
+      Sentry.setExtras(options);
+      Sentry.captureMessage(searchParams.get('token'));
+    }
 
     if (options.size) {
       this.size = options.size;
