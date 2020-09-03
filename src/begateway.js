@@ -140,7 +140,7 @@
       };
 
       that.hideSpinner();
-      $bgw(iframeDiv).show();
+      setTimeout(() => $bgw(iframeDiv).show(), 100);
     };
 
     return iframe;
