@@ -140,7 +140,7 @@
       };
 
       that.hideSpinner();
-      setTimeout(() => $bgw(iframeDiv).show(), 100);
+      setTimeout(function () { $bgw(iframeDiv).show() }, 100);
     };
 
     return iframe;
