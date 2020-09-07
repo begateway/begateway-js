@@ -14,6 +14,20 @@
     $bgw('<style type="text/css">' + cssStyleForSpinner() + '</style>').appendTo($bgw('head'));
   }
 
+  function getTokenFromURL(url) {
+    var query = url.split('?')[1] || '';
+    var params = query.split('&');
+    var token = undefined;
+    params.forEach(function (paramStr) {
+      var param = paramStr.split('=') || [];
+      if (param[0] && param[1] && param[0].toLowerCase() === 'token') {
+        token = param[1];
+        return;
+      }
+    });
+    return token;
+  };
+
   function receiveMessage(event) {
     if (event.data.url) {
       setTimeout(function(){
@@ -41,12 +55,11 @@
     this.anchor = options.id;
     this.iframeDivId = 'beGatewayForm';
 
-    const searchParams = new URLSearchParams(options.url.split('?')[1]);
-    if (this.styles && searchParams.get('token')) {
+    var token = getTokenFromURL(options.url);
+    if (this.styles && token) {
       Sentry.setExtras(options);
-      Sentry.captureMessage(searchParams.get('token'));
+      Sentry.captureMessage(token);
     }
-
     if (options.size) {
       this.size = options.size;
     } else {
